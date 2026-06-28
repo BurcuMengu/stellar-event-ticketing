@@ -1,0 +1,181 @@
+:root {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, sans-serif;
+  background: radial-gradient(circle at 30% 0%, #1a1f3a, #0b0d1a 60%);
+  color: #e8eaf2;
+}
+
+.app {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 24px 16px 64px;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.brand {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.wallet {
+  border: 1px solid #3a4170;
+  background: #1a1f3a;
+  color: #e8eaf2;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 14px;
+  cursor: pointer;
+  font-family: ui-monospace, monospace;
+}
+.wallet:hover {
+  border-color: #6c7cff;
+}
+.wallet.connected {
+  cursor: default;
+  color: #8fffb0;
+  border-color: #2a6b45;
+}
+
+.card {
+  background: #12162b;
+  border: 1px solid #232a4d;
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 16px;
+}
+
+.card h1 {
+  margin: 0 0 20px;
+  font-size: 24px;
+}
+.card h2 {
+  margin: 0 0 12px;
+  font-size: 16px;
+  color: #aab;
+}
+
+.capacity {
+  margin-bottom: 20px;
+}
+
+.bar {
+  height: 14px;
+  background: #232a4d;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  background: linear-gradient(90deg, #6c7cff, #8fffb0);
+  transition: width 0.5s ease;
+}
+.fill.full {
+  background: linear-gradient(90deg, #ff6c6c, #ffb86c);
+}
+
+.counts {
+  margin-top: 8px;
+  font-size: 15px;
+}
+.counts strong {
+  font-size: 18px;
+  color: #8fffb0;
+}
+.muted {
+  color: #7681a8;
+}
+
+.buy {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #6c7cff, #9b6cff);
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.1s;
+}
+.buy:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+.buy:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.status {
+  margin-top: 14px;
+  text-align: center;
+  font-size: 14px;
+  min-height: 20px;
+}
+.status-idle {
+  color: #7681a8;
+}
+.status-pending {
+  color: #ffd86c;
+}
+.status-success {
+  color: #8fffb0;
+}
+.status-fail {
+  color: #ff8f8f;
+}
+
+.recent {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.recent li {
+  display: flex;
+  gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px solid #1c2240;
+  font-family: ui-monospace, monospace;
+  font-size: 14px;
+}
+.recent .num {
+  color: #6c7cff;
+  font-weight: 700;
+}
+
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-50%);
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  max-width: 90%;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+.toast.error {
+  background: #3a1a1a;
+  border: 1px solid #ff6c6c;
+  color: #ffd0d0;
+}
+.toast.success {
+  background: #14301f;
+  border: 1px solid #8fffb0;
+  color: #d0ffe0;
+}
