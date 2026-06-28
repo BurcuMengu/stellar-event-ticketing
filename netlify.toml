@@ -1,0 +1,18 @@
+# The app lives in the frontend/ subfolder.
+[build]
+  base = "frontend"
+  command = "npm run build"
+  publish = "dist"
+
+# Public testnet config — baked in so the deploy is self-contained
+# (these are NOT secrets: a public contract id, RPC url and network passphrase).
+[build.environment]
+  VITE_CONTRACT_ID = "CCKGLLNUZ3SFTIG67WMV7TZ6IX6NYWPDPEVBAFL3L74SA2WNRZKN6BJA"
+  VITE_RPC_URL = "https://soroban-testnet.stellar.org"
+  VITE_NETWORK_PASSPHRASE = "Test SDF Network ; September 2015"
+
+# Single-page app: route everything back to index.html.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
