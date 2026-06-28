@@ -3,6 +3,8 @@
 A multi-wallet Stellar dApp with a deployed Soroban smart contract, real-time event
 integration, and visible transaction status. Built for **Bootcamp Level 2**.
 
+**🔗 Live demo:** https://stellar-event-tickets.netlify.app/
+
 ## On-chain references (testnet)
 
 | | |
