@@ -3,7 +3,24 @@
 A multi-wallet Stellar dApp with a deployed Soroban smart contract, real-time event
 integration, and visible transaction status. Built for **Bootcamp Level 2**.
 
-**Deployed contract (testnet):** `CCKGLLNUZ3SFTIG67WMV7TZ6IX6NYWPDPEVBAFL3L74SA2WNRZKN6BJA`
+## On-chain references (testnet)
+
+| | |
+|---|---|
+| **Deployed contract** | `CCKGLLNUZ3SFTIG67WMV7TZ6IX6NYWPDPEVBAFL3L74SA2WNRZKN6BJA` |
+| **Explorer (contract)** | https://stellar.expert/explorer/testnet/contract/CCKGLLNUZ3SFTIG67WMV7TZ6IX6NYWPDPEVBAFL3L74SA2WNRZKN6BJA |
+| **Sample `buy_ticket` tx** | `fa36b397ba1587736b3a288f0b15ba86e61619d3ab54cce64a5d58ea6fb34464` |
+| **Explorer (tx)** | https://stellar.expert/explorer/testnet/tx/fa36b397ba1587736b3a288f0b15ba86e61619d3ab54cce64a5d58ea6fb34464 |
+
+## Screenshots
+
+**Wallet options (Stellar Wallets Kit — multi-wallet):**
+
+![Wallet options](docs/screenshots/wallet-options.png)
+
+**App with live testnet data (1/5 sold):**
+
+![App live](docs/screenshots/app-live.png)
 
 ## What it does
 
