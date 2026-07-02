@@ -89,3 +89,7 @@ stellar contract invoke --id <CID> --source <identity> --network testnet -- \
 - Soroban SDK 22, Rust, stellar CLI 27
 - `@stellar/stellar-sdk` 16, `@creit.tech/stellar-wallets-kit` 2.4
 - React 19 + Vite + TypeScript
+
+## License
+
+MIT — see [LICENSE](LICENSE).
