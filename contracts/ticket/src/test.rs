@@ -54,6 +54,28 @@ fn test_sold_out() {
 }
 
 #[test]
+fn test_initialize_rejects_zero_capacity() {
+    let env = Env::default();
+    env.mock_all_auths();
+    let contract_id = env.register(TicketContract, ());
+    let client = TicketContractClient::new(&env, &contract_id);
+    let admin = Address::generate(&env);
+    let res = client.try_initialize(&admin, &String::from_str(&env, "Zero"), &0u32);
+    assert_eq!(res, Err(Ok(Error::InvalidInput)));
+}
+
+#[test]
+fn test_initialize_rejects_empty_name() {
+    let env = Env::default();
+    env.mock_all_auths();
+    let contract_id = env.register(TicketContract, ());
+    let client = TicketContractClient::new(&env, &contract_id);
+    let admin = Address::generate(&env);
+    let res = client.try_initialize(&admin, &String::from_str(&env, ""), &5u32);
+    assert_eq!(res, Err(Ok(Error::InvalidInput)));
+}
+
+#[test]
 fn test_double_initialize_fails() {
     let (env, client, _admin) = setup();
     let admin2 = Address::generate(&env);

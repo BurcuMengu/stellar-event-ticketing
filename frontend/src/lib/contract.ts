@@ -88,6 +88,16 @@ export async function buyTicket(buyer: string): Promise<PurchaseResult> {
 
   // Submit and poll for the result.
   const sent = await server.sendTransaction(signedTx);
+  if (sent.status === "TRY_AGAIN_LATER") {
+    throw new Error(
+      "The network is busy and could not accept the transaction. Please try again in a few seconds.",
+    );
+  }
+  if (sent.status === "DUPLICATE") {
+    throw new Error(
+      "This transaction was already submitted. Please refresh before trying again.",
+    );
+  }
   if (sent.status === "ERROR") {
     throw new Error(JSON.stringify(sent.errorResult ?? sent));
   }
